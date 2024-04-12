@@ -1,25 +1,30 @@
 {
   "name": "polkadot-js",
-  "version": "0.0.198",
+  "version": "0.0.287",
+  "engine-strict": true,
+  "engines": {
+    "node": ">=18.14"
+  },
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start --port 8080",
-    "build": "yarn polkadot-types-internal-metadata",
+    "build": "yarn polkadot-types-internal-metadata && yarn polkadot-types-internal-metadata --chain Polkadot && yarn polkadot-types-internal-metadata --chain Kusama",
     "build:release": "polkadot-ci-ghact-build --skip-beta && polkadot-ci-ghact-docs",
     "docs": "docusaurus build",
     "lint": "echo \"Skipping lint\"",
+    "postinstall": "polkadot-dev-yarn-only",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve --port 8080",
     "test": "echo \"Skipping test\""
   },
   "devDependencies": {
-    "@docusaurus/core": "2.0.1",
-    "@docusaurus/preset-classic": "2.0.1",
+    "@docusaurus/core": "2.4.3",
+    "@docusaurus/preset-classic": "2.4.3",
     "@mdx-js/react": "^1.6.22",
-    "@polkadot/dev": "^0.67.94",
-    "@polkadot/typegen": "^9.2.1",
+    "@polkadot/dev": "^0.78.1",
+    "@polkadot/typegen": "^10.11.2",
     "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -36,12 +41,12 @@
       "last 1 safari version"
     ]
   },
-  "packageManager": "yarn@3.2.0",
+  "packageManager": "yarn@4.1.1",
   "dependencies": {
-    "@cmfcmf/docusaurus-search-local": "^0.11.0"
+    "@cmfcmf/docusaurus-search-local": "^1.1.0"
   },
   "versions": {
-    "git": "0.0.198",
-    "npm": "0.0.198"
+    "git": "0.0.287",
+    "npm": "0.0.287"
   }
 }
